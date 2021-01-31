@@ -3,8 +3,7 @@ class SceneA extends Phaser.Scene {
     player;
     playerStartPoint;
     preload() {
-        //loading in the assets (bat and heart)
-        this.load.image('bat', '../Assets/bat.png');
+        //loading in the assets
         this.load.image('heart', '../Assets/heart-small.png');
         //loading in the tileset which will be used in the Tiled program
         this.load.image('tiles', '../Assets/Medieval_tiles_free2.png');
@@ -13,6 +12,10 @@ class SceneA extends Phaser.Scene {
             frameWidth: 100,
             frameHeight: 73
         })
+        this.load.spritesheet("bat", "../Assets/bat.png", {
+            frameWidth: 64,
+            frameHeight: 38
+        });
         //load in tilemap from tiled
         this.load.tilemapTiledJSON('gameMap', '../Assets/TiledMap.json');
     }
